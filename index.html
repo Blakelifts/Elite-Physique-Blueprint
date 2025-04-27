@@ -3,145 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Elite Physique Blueprint</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-
-    header {
-      background-color: #333;
-      color: white;
-      padding: 10px 0;
-      text-align: center;
-    }
-
-    main {
-      padding: 20px;
-    }
-
-    .form-container {
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .form-container h2 {
-      text-align: center;
-      color: #333;
-    }
-
-    label {
-      display: block;
-      margin: 10px 0 5px;
-    }
-
-    input[type="email"],
-    input[type="text"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border-radius: 5px;
-      border: 1px solid #ddd;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #5c6bc0;
-      border: none;
-      border-radius: 5px;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #3f51b5;
-    }
-
-    .thank-you-message {
-      text-align: center;
-      font-size: 18px;
-      color: #333;
-      padding: 20px;
-    }
-
-    .hero-image {
-      width: 100%;
-      max-width: 800px;
-      margin: 20px auto;
-      display: block;
-    }
-  </style>
+  <!-- Add any styles you want here -->
 </head>
 <body>
-
-  <!-- Header -->
   <header>
-    <h1>Elite Physique Blueprint</h1>
-    <p>Your path to building a confident and strong physique</p>
+    <h1>Welcome to the Elite Physique Blueprint</h1>
+    <p>Your journey to the dream physique starts here!</p>
+    <img src="https://i.imgur.com/V3FCWyL.jpeg" alt="Elite Physique" style="width:100%; height:auto;">
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <div class="form-container">
-      <h2>Get Your Free Blueprint</h2>
-      <p>Fill out the form below to get started with your custom fitness plan!</p>
+  <!-- Start of the form -->
+  <section>
+    <h2>Sign Up for Your Free Blueprint</h2>
+    <form action="https://formspree.io/f/xqaqajbp" method="POST">
+      <!-- Your name field -->
+      <label for="name">Your Name:</label>
+      <input type="text" name="name" id="name" required>
 
-      <!-- Hero Image -->
-      <img src="https://i.imgur.com/V3FCWyL.jpeg" alt="Elite Physique Blueprint" class="hero-image">
+      <!-- Your #1 fitness goal field -->
+      <label for="goal">Your #1 Fitness Goal:</label>
+      <input type="text" name="goal" id="goal" required>
 
-      <!-- Form -->
-      <form id="contact-form" action="https://formspree.io/f/xvgaglep" method="POST">
-        <label for="name">Your Name:</label>
-        <input type="text" name="name" id="name" required>
+      <!-- Email field -->
+      <label for="email">Your Email:</label>
+      <input type="email" name="email" id="email" required>
 
-        <label for="email">Your Email:</label>
-        <input type="email" name="email" id="email" required>
+      <!-- Hidden field for redirect after submission -->
+      <input type="hidden" name="_next" value="https://dazzling-kataifi-d24ea2.netlify.app/thankyou.html" />
 
-        <label for="goal">Your #1 Fitness Goal:</label>
-        <input type="text" name="goal" id="goal" required>
-<input type="hidden" name="_next" value="https://dazzling-kataifi-d24ea2.netlify.app/thankyou.html" />
+      <button type="submit">Get Your Free Blueprint</button>
+    </form>
+  </section>
 
-
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  </main>
-
-  <!-- JavaScript for redirect -->
-  <script>
-    document.getElementById("contact-form").addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent default form submission
-
-      var formData = new FormData(this);
-
-      fetch("https://formspree.io/f/xqaqajbp", {
-        method: "POST",
-        body: formData
-      })
-      .then(function(response) {
-        if (response.ok) {
-          // Redirect to the thank you page if form submission is successful
-          window.location.href = "file:///C:/Users/Tanner%20Blake/Desktop/website/thankyou.html"; // 
-        } else {
-          alert("There was an error. Please try again.");
-        }
-      })
-      .catch(function(error) {
-        alert("There was an error. Please try again.");
-      });
-    });
-  </script>
-
+  <footer>
+    <p>&copy; 2025 Elite Physique Blueprint. All rights reserved.</p>
+  </footer>
 </body>
 </html>
