@@ -74,6 +74,13 @@
       color: #333;
       padding: 20px;
     }
+
+    .hero-image {
+      width: 100%;
+      max-width: 800px;
+      margin: 20px auto;
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -90,8 +97,11 @@
       <h2>Get Your Free Blueprint</h2>
       <p>Fill out the form below to get started with your custom fitness plan!</p>
 
+      <!-- Hero Image -->
+      <img src="https://i.imgur.com/V3FCWyL.jpeg" alt="Elite Physique Blueprint" class="hero-image">
+
       <!-- Form -->
-      <form action="https://formspree.io/f/xvgaglep" method="POST" id="form">
+      <form action="https://formspree.io/f/xvgaglep" method="POST">
         <label for="name">Your Name:</label>
         <input type="text" name="name" id="name" required>
 
@@ -108,24 +118,10 @@
 
   <!-- Redirect Script -->
   <script>
-    document.querySelector('form').onsubmit = function(event) {
-      event.preventDefault();  // Prevents the default form submission
-
-      // Submit form using Formspree (AJAX)
-      var form = document.getElementById('form');
-      var formData = new FormData(form);
-      fetch(form.action, {
-        method: 'POST',
-        body: formData
-      }).then(function(response) {
-        if (response.ok) {
-          window.location.href = '/thankyou.html';  // Redirect to thank you page
-        } else {
-          alert('There was a problem with your submission. Please try again.');
-        }
-      }).catch(function(error) {
-        alert('An error occurred. Please try again.');
-      });
+    document.querySelector('form').onsubmit = function() {
+      setTimeout(function() {
+        window.location.href = '/thankyou.html';  // Redirect to Thank You page after form submission
+      }, 2000); // Delay redirect by 2 seconds to allow form submission to complete
     };
   </script>
 
