@@ -1,68 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Elite Physique Blueprint</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f9;
-      color: #333;
-    }
-
-    header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 50px 0;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 3rem;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    form {
-      background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      margin-top: 20px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-
-    input[type="email"], input[type="text"] {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background-color: #2c3e50;
-      color: white;
-      font-size: 16px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #344
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Physique Blueprint</title>
+    <link rel="stylesheet" href="style.css"> <!-- Make sure your CSS is linked correctly -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to Elite Physique Blueprint</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Your Fitness Transformation Starts Here</h2>
+            <form action="https://formspree.io/f/xvgaglep" method="POST">
+                <label>Your Name:</label>
+                <input type="text" name="name" required>
+                <label>Your #1 Fitness Goal:</label>
+                <input type="text" name="goal" required>
+                <label>Your Email:</label>
+                <input type="email" name="email" required>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
