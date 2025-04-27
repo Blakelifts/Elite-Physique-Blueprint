@@ -1,28 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Physique Blueprint</title>
-    <link rel="stylesheet" href="style.css"> <!-- Make sure your CSS is linked correctly -->
+    <link rel="stylesheet" href="style.css"> <!-- Make sure your CSS file is linked here -->
+    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script>
+    <style>
+        /* Add custom CSS if needed for smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <h1>Welcome to Elite Physique Blueprint</h1>
+        <img src="https://i.imgur.com/V3FCWyL.jpeg" alt="Coach" class="hero-image">
     </header>
+
     <main>
         <section>
             <h2>Your Fitness Transformation Starts Here</h2>
+            <p>Are you ready to unlock your full potential? With the Elite Physique Blueprint, you will get the training and
+                support needed to transform your body and build the physique you've always dreamed of!</p>
+
+            <!-- Form to collect user's information -->
             <form action="https://formspree.io/f/xvgaglep" method="POST">
-                <label>Your Name:</label>
-                <input type="text" name="name" required>
-                <label>Your #1 Fitness Goal:</label>
-                <input type="text" name="goal" required>
-                <label>Your Email:</label>
-                <input type="email" name="email" required>
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="goal">Your #1 Fitness Goal:</label>
+                <input type="text" id="goal" name="goal" required>
+
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" required>
+
                 <button type="submit">Submit</button>
             </form>
         </section>
     </main>
+
+    <footer>
+        <p>&copy; 2025 Elite Physique Blueprint | Designed for Busy Guys</p>
+    </footer>
+
+    <script>
+        // Enable smooth scrolling for links on the page
+        const scroll = new SmoothScroll('a[href*="#"]', {
+            speed: 800,
+            speedAsDuration: true
+        });
+    </script>
 </body>
+
 </html>
