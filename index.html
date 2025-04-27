@@ -1,59 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Physique Blueprint</title>
-    <link rel="stylesheet" href="style.css"> <!-- Make sure your CSS file is linked here -->
-    <script src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script>
-    <style>
-        /* Add custom CSS if needed for smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Elite Physique Blueprint</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+
+    input[type="email"],
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #5c6bc0;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3f51b5;
+    }
+
+    .thank-you-message {
+      text-align: center;
+      font-size: 18px;
+      color: #333;
+      padding: 20px;
+    }
+  </style>
 </head>
-
 <body>
-    <header>
-        <h1>Welcome to Elite Physique Blueprint</h1>
-        <img src="https://i.imgur.com/V3FCWyL.jpeg" alt="Coach" class="hero-image">
-    </header>
 
-    <main>
-        <section>
-            <h2>Your Fitness Transformation Starts Here</h2>
-            <p>Are you ready to unlock your full potential? With the Elite Physique Blueprint, you will get the training and
-                support needed to transform your body and build the physique you've always dreamed of!</p>
+  <!-- Header -->
+  <header>
+    <h1>Elite Physique Blueprint</h1>
+    <p>Your path to building a confident and strong physique</p>
+  </header>
 
-            <!-- Form to collect user's information -->
-            <form action="https://formspree.io/f/xvgaglep" method="POST">
-                <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required>
+  <!-- Main Content -->
+  <main>
+    <div class="form-container">
+      <h2>Get Your Free Blueprint</h2>
+      <p>Fill out the form below to get started with your custom fitness plan!</p>
 
-                <label for="goal">Your #1 Fitness Goal:</label>
-                <input type="text" id="goal" name="goal" required>
+      <!-- Form -->
+      <form action="https://formspree.io/f/xvgaglep" method="POST" id="form">
+        <label for="name">Your Name:</label>
+        <input type="text" name="name" id="name" required>
 
-                <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required>
+        <label for="email">Your Email:</label>
+        <input type="email" name="email" id="email" required>
 
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
+        <label for="goal">Your #1 Fitness Goal:</label>
+        <input type="text" name="goal" id="goal" required>
 
-    <footer>
-        <p>&copy; 2025 Elite Physique Blueprint | Designed for Busy Guys</p>
-    </footer>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </main>
 
-    <script>
-        // Enable smooth scrolling for links on the page
-        const scroll = new SmoothScroll('a[href*="#"]', {
-            speed: 800,
-            speedAsDuration: true
-        });
-    </script>
+  <!-- Redirect Script -->
+  <script>
+    document.querySelector('form').onsubmit = function(event) {
+      event.preventDefault();  // Prevents the default form submission
+
+      // Submit form using Formspree (AJAX)
+      var form = document.getElementById('form');
+      var formData = new FormData(form);
+      fetch(form.action, {
+        method: 'POST',
+        body: formData
+      }).then(function(response) {
+        if (response.ok) {
+          window.location.href = '/thankyou.html';  // Redirect to thank you page
+        } else {
+          alert('There was a problem with your submission. Please try again.');
+        }
+      }).catch(function(error) {
+        alert('An error occurred. Please try again.');
+      });
+    };
+  </script>
+
 </body>
-
 </html>
