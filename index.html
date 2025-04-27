@@ -4,40 +4,123 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elite Physique Blueprint</title>
-  <!-- Add any styles you want here -->
+  <style>
+    /* Global styling */
+    body {
+      background-color: #1E3A5F;  /* Dark blue background */
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px;
+    }
+
+    header img {
+      width: 100%;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-top: 20px;
+    }
+
+    p {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    /* Form styling */
+    section {
+      padding: 40px;
+      text-align: center;
+      background-color: #2D4A6E;  /* Slightly lighter dark blue */
+      margin-top: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input[type="text"], input[type="email"] {
+      width: 80%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      width: 80%;
+      padding: 15px;
+      background-color: yellow;  /* Yellow submit button */
+      border: none;
+      border-radius: 25px;  /* Oval shape */
+      font-size: 18px;
+      font-weight: bold;
+      color: black;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #f4c542;  /* Slightly darker yellow on hover */
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1E3A5F;  /* Matching footer color */
+    }
+
+    footer p {
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Header Section -->
   <header>
-    <h1>Welcome to the Elite Physique Blueprint</h1>
-    <p>Your journey to the dream physique starts here!</p>
-    <img src="https://i.imgur.com/V3FCWyL.jpeg" alt="Elite Physique" style="width:500; height:auto;">
+    <img src="https://imgur.com/02b13d38-ea9d-476c-891e-c98379b1884f" alt="Elite Physique Blueprint Header">
+    <h1>Elite Physique Blueprint</h1>
+    <p>I help busy guys get into shape with minimal effort</p>
   </header>
 
-  <!-- Start of the form -->
+  <!-- Form Section -->
   <section>
     <h2>Sign Up for Your Free Blueprint</h2>
-    <form action="https://formspree.io/f/xqaqajbp" method="POST">
-      <!-- Your name field -->
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <!-- Name Field -->
       <label for="name">Your Name:</label>
       <input type="text" name="name" id="name" required>
 
-      <!-- Your #1 fitness goal field -->
+      <!-- Fitness Goal Field -->
       <label for="goal">Your #1 Fitness Goal:</label>
       <input type="text" name="goal" id="goal" required>
 
-      <!-- Email field -->
+      <!-- Email Field -->
       <label for="email">Your Email:</label>
       <input type="email" name="email" id="email" required>
 
-      <!-- Hidden field for redirect after submission -->
-      <input type="hidden" name="_next" value="https://dazzling-kataifi-d24ea2.netlify.app/thankyou.html" />
+      <!-- Submit Button -->
+      <input type="submit" value="Submit">
 
-      <button type="submit">Get Your Free Blueprint</button>
+      <!-- Hidden redirect after form submission -->
+      <input type="hidden" name="_next" value="https://your-site-name.netlify.app/thankyou.html">
     </form>
   </section>
 
+  <!-- Footer Section -->
   <footer>
     <p>&copy; 2025 Elite Physique Blueprint. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
