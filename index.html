@@ -101,7 +101,7 @@
       <img src="https://i.imgur.com/V3FCWyL.jpeg" alt="Elite Physique Blueprint" class="hero-image">
 
       <!-- Form -->
-      <form action="https://formspree.io/f/xvgaglep" method="POST">
+      <form id="contact-form" action="https://formspree.io/f/xvgaglep" method="POST">
         <label for="name">Your Name:</label>
         <input type="text" name="name" id="name" required>
 
@@ -116,13 +116,29 @@
     </div>
   </main>
 
-  <!-- Redirect Script -->
+  <!-- JavaScript for redirect -->
   <script>
-    document.querySelector('form').onsubmit = function() {
-      setTimeout(function() {
-        window.location.href = '/thankyou.html';  // Redirect to Thank You page after form submission
-      }, 2000); // Delay redirect by 2 seconds to allow form submission to complete
-    };
+    document.getElementById("contact-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      var formData = new FormData(this);
+
+      fetch("https://formspree.io/f/xvgaglep", {
+        method: "POST",
+        body: formData
+      })
+      .then(function(response) {
+        if (response.ok) {
+          // Redirect to the thank you page if form submission is successful
+          window.location.href = "file:///C:/Users/Tanner%20Blake/Desktop/website/thankyou.html"; // 
+        } else {
+          alert("There was an error. Please try again.");
+        }
+      })
+      .catch(function(error) {
+        alert("There was an error. Please try again.");
+      });
+    });
   </script>
 
 </body>
