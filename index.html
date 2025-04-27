@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elite Physique Blueprint</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const links = document.querySelectorAll('a[href^="#"]');
+      for (const link of links) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      }
+    });
+  </script>
+
+  <style>
+    #loader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 50;
+    }
+    #loader.hidden {
+      animation: fadeOut 1s;
+      animation-fill-mode: forwards;
+    }
+    @keyframes fadeOut {
+      100% {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="text-3xl font-bold animate-pulse">Loading...</div>
+  </div>
+
+  <script>
+    window.addEventListener("load", function() {
+      const loader = document.getElementById("loader");
+      loader.classList.add("hidden");
+    });
+  </script>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 bg-white shadow z-40">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+      <div class="text-2xl font-bold">Elite Physique Blueprint</div>
+      <nav class="space-x-6">
+        <a href="#home" class="hover:text-blue-600">Home</a>
+        <a href="#offer" class="hover:text-blue-600">Program</a>
+        <a href="#apply" class="hover:text-blue-600">Apply</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-screen flex flex-col md:flex-row items-center justify-center text-center md:text-left px-6 py-16">
+    <div class="md:w-1/2 space-y-6">
+      <h1 class="text-5xl font-bold">Build Your Elite Physique</h1>
+      <p class="text-xl text-gray-600">Even with a packed schedule, you can still achieve your dream body and confidence. I'll show you how.</p>
+      <a href="#apply" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">Apply Now</a>
+    </div>
+    <div class="md:w-1/2 mt-10 md:mt-0">
+      <img src="https://i.imgur.com/V3FCWyL.jpeg" alt="Coach Image" class="rounded-lg shadow-xl">
+    </div>
+  </section>
+
+  <!-- Offer Section -->
+  <section id="offer" class="bg-white py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center space-y-8">
+      <h2 class="text-4xl font-bold">What's Included</h2>
+      <ul class="text-lg space-y-4">
+        <li>✅ Time-Efficient Workouts (3-4x per week)</li>
+        <li>✅ Flexible Meal Plans (No crazy diets)</li>
+        <li>✅ Personalized Adjustments Based On Progress</li>
+        <li>✅ Mindset Boost For Long-Term Confidence</li>
+      </ul>
+      <a href="#apply" class="mt-8 inline-block bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition">Join Now</a>
+    </div>
+  </section>
+
+  <!-- Application Form -->
+  <section id="apply" class="py-20 bg-gray-100 px-6">
+    <div class="max-w-3xl mx-auto text-center space-y-8">
+      <h2 class="text-4xl font-bold">Apply for Coaching</h2>
+      <p class="text-lg text-gray-600">Limited spots available. Tell me about yourself below!</p>
+
+      <!-- Your Formspree Form -->
+      <form action="https://formspree.io/f/xvgaglep" method="POST" class="space-y-6">
+        <label class="block text-left">
+          Your Email:
+          <input type="email" name="email" required class="w-full p-4 rounded-lg border mt-2">
+        </label>
+        
+        <label class="block text-left">
+          Your Message:
+          <textarea name="message" required class="w-full p-4 rounded-lg border mt-2"></textarea>
+        </label>
+
+        <!-- Redirect to Thank You Page after submission -->
+        <input type="hidden" name="_next" value="thankyou.html">
+
+        <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-lg hover:bg-blue-700 transition">Submit Application</button>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 text-center text-gray-400">
+    &copy; 2025 Elite Physique Blueprint. All rights reserved.
+  </footer>
+
+</body>
+</html>
