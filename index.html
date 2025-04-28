@@ -7,9 +7,9 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0b1d3a;
-      color: white;
+      font-family: 'Roboto Mono', monospace;
+      background-color: #0A1A2F;
+      color: #FFFFFF;
       scroll-behavior: smooth;
     }
 
@@ -17,6 +17,9 @@
       position: relative;
       height: 100vh;
       background: url('https://i.imgur.com/6t5UcqM.png') no-repeat center center/cover;
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -24,40 +27,12 @@
       text-align: center;
     }
 
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 0;
-    }
-
     header h1 {
-      z-index: 1;
-      font-size: 5em;
-      color: white;
-      letter-spacing: 2px;
-      font-weight: 700;
-      text-shadow: 
-        -1px -1px 0 #000,
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
-      margin: 0;
-    }
-
-    header p {
-      z-index: 1;
-      font-size: 2em;
-      color: white;
-      letter-spacing: 1px;
-      text-shadow: 
-        -1px -1px 0 #000,
-         1px -1px 0 #000,
-        -1px  1px 0 #000,
-         1px  1px 0 #000;
-      margin-top: 20px;
+      font-size: 64px;
+      border: 5px solid black;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      color: #FFFFFF;
     }
 
     section {
@@ -70,118 +45,104 @@
       justify-content: center;
       gap: 30px;
       flex-wrap: wrap;
+      margin-bottom: 60px;
     }
 
     .bubble {
-      background-color: #1a2e57;
-      padding: 20px;
-      border-radius: 15px;
-      width: 300px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.2);
-      transition: transform 0.3s, box-shadow 0.3s;
+      background-color: #1E3A5F;
+      border-radius: 20px;
+      padding: 30px;
+      max-width: 300px;
+      flex: 1;
+      min-width: 250px;
     }
 
-    .bubble:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 20px rgba(255,255,255,0.4);
-    }
-
-    .bubble h3 {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-    }
-
-    .bubble p {
-      font-size: 1em;
-      line-height: 1.5;
-    }
-
-    .button {
-      margin-top: 20px;
-      background-color: yellow;
-      color: black;
+    .bubble button {
+      margin-top: 15px;
       padding: 10px 20px;
+      background-color: #FFD700;
+      color: black;
       border: none;
       border-radius: 30px;
-      font-size: 1em;
+      font-weight: bold;
       cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
     }
 
     form {
-      margin-top: 40px;
-    }
-
-    input[type="email"], input[type="text"], textarea {
-      width: 90%;
-      max-width: 400px;
-      padding: 15px;
-      margin: 10px 0;
-      border: none;
+      max-width: 500px;
+      margin: 0 auto 60px auto;
+      background: #13294B;
+      padding: 40px;
       border-radius: 10px;
     }
 
-    button[type="submit"] {
-      background-color: yellow;
-      color: black;
-      padding: 15px 40px;
-      font-size: 1.2em;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      margin-top: 20px;
+    label {
+      display: block;
+      margin-bottom: 15px;
+      text-align: left;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.8em;
-      color: gray;
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button[type="submit"] {
+      padding: 12px 30px;
+      background-color: #FFD700;
+      color: black;
+      border: none;
+      border-radius: 30px;
+      font-size: 18px;
+      cursor: pointer;
     }
   </style>
 </head>
-
 <body>
 
 <header>
   <h1>Elite Physique Blueprint</h1>
-  <p>I help busy guys get into shape with minimal effort</p>
-  <a href="#form" class="button">Get Started</a>
 </header>
 
-<section>
+<section id="how-it-works">
   <h2>HOW IT WORKS</h2>
   <div class="how-it-works">
     <div class="bubble">
-      <h3>Step 1</h3>
       <p>Fill out the information below and a Google Form will be emailed to you shortly.</p>
-      <a href="#form" class="button">Get Started</a>
+      <button onclick="document.getElementById('form-section').scrollIntoView({behavior:'smooth'})">Get Started</button>
     </div>
     <div class="bubble">
-      <h3>Step 2</h3>
-      <p>Fill out the Google Form with your fitness goals and some small lifestyle details so I can create a Blueprint custom to YOU.</p>
+      <p>Fill out the Google Form with your fitness goals and small lifestyle details so I can create a Blueprint custom to YOU.</p>
     </div>
     <div class="bubble">
-      <h3>Step 3</h3>
-      <p>If you like your free Blueprint, stay in contact with me and we can set up full-time 1-on-1 coaching!</p>
+      <p>If you like your free Blueprint, stay in contact with me and we can set up full time 1-on-1 coaching!</p>
     </div>
   </div>
 </section>
 
-<section id="form">
-  <h2>Apply for Your Free Blueprint</h2>
+<section id="form-section">
+  <h2>I help busy guys get into shape with minimal effort</h2>
+
   <form action="https://formspree.io/f/xqaqajbp" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required><br>
-    <input type="email" name="email" placeholder="Your Email" required><br>
-    <input type="text" name="goal" placeholder="Your #1 Fitness Goal" required><br>
+    <label>
+      Your Name:
+      <input type="text" name="name" required>
+    </label>
+    <label>
+      Your Email:
+      <input type="email" name="email" required>
+    </label>
+    <label>
+      Your #1 Fitness Goal:
+      <textarea name="goal" required></textarea>
+    </label>
     <button type="submit">Submit</button>
   </form>
 </section>
-
-<footer>
-  &copy; 2025 Elite Physique Blueprint. All rights reserved.
-</footer>
 
 </body>
 </html>
