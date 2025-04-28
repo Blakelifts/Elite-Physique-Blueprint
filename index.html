@@ -84,10 +84,7 @@
       background: #13294B;
       padding: 40px;
       border-radius: 10px;
-      position: absolute;
-      bottom: 0;
       width: 100%;
-      left: 0;
     }
 
     label {
@@ -154,8 +151,16 @@
     .third-image {
       display: block;
       margin: 40px auto;
-      width: 65%;
+      width: 280px; /* Slightly larger than the other images */
+      height: 320px;
       border-radius: 10px;
+    }
+
+    /* Position the form at the bottom of the page */
+    footer {
+      margin-top: auto;
+      background-color: #13294B;
+      padding: 40px 20px;
     }
 
   </style>
@@ -221,6 +226,24 @@
   
   <img class="third-image" src="https://i.imgur.com/mcll4nq.jpeg" alt="Trust Image">
 </section>
+
+<footer>
+  <form action="https://formspree.io/f/xqaqajbp" method="POST">
+    <label>
+      Your Name:
+      <input type="text" name="name" required>
+    </label>
+    <label>
+      Your Email:
+      <input type="email" name="email" required>
+    </label>
+    <label>
+      Your #1 Fitness Goal:
+      <textarea name="goal" required></textarea>
+    </label>
+    <button type="submit">Submit</button>
+  </form>
+</footer>
 
 </body>
 </html>
