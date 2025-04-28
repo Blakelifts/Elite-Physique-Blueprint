@@ -4,19 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Elite Physique Blueprint</title>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Share Tech Mono', monospace;
-      background-color: #001f3f;
-      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0b1d3a;
+      color: white;
+      scroll-behavior: smooth;
     }
 
     header {
-      background: url('https://i.imgur.com/6t5UcqM.png') no-repeat center center/cover;
-      height: 100vh;
       position: relative;
+      height: 100vh;
+      background: url('https://i.imgur.com/6t5UcqM.png') no-repeat center center/cover;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -24,107 +24,120 @@
       text-align: center;
     }
 
-    header::after {
-      content: "";
+    header::before {
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
       z-index: 0;
     }
 
-    header h1, header p {
+    header h1 {
       z-index: 1;
-      opacity: 0;
-      animation: fadeIn 2s ease-in forwards;
+      font-size: 5em;
+      color: white;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-shadow: 
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+      margin: 0;
     }
 
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
+    header p {
+      z-index: 1;
+      font-size: 2em;
+      color: white;
+      letter-spacing: 1px;
+      text-shadow: 
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
+      margin-top: 20px;
     }
 
-    .how-it-works {
-      padding: 50px 20px;
+    section {
+      padding: 60px 20px;
       text-align: center;
     }
 
-    .how-it-works h2 {
-      font-size: 2.5em;
-      margin-bottom: 40px;
-    }
-
-    .bubbles {
+    .how-it-works {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
+      flex-wrap: wrap;
     }
 
     .bubble {
-      background-color: #f0f0f0;
-      color: #001f3f;
+      background-color: #1a2e57;
       padding: 20px;
-      border-radius: 20px;
+      border-radius: 15px;
       width: 300px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .bubble:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
+      box-shadow: 0 0 20px rgba(255,255,255,0.4);
     }
 
-    .get-started-btn {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: gold;
-      color: #001f3f;
-      border: none;
-      border-radius: 25px;
-      cursor: pointer;
+    .bubble h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .bubble p {
       font-size: 1em;
+      line-height: 1.5;
+    }
+
+    .button {
+      margin-top: 20px;
+      background-color: yellow;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
       text-decoration: none;
       display: inline-block;
     }
 
-    .form-section {
-      text-align: center;
-      padding: 50px 20px;
-    }
-
     form {
-      display: inline-block;
-      margin-top: 20px;
+      margin-top: 40px;
     }
 
-    input[type="email"],
-    input[type="text"],
-    textarea {
-      padding: 10px;
-      margin: 10px;
-      border-radius: 5px;
+    input[type="email"], input[type="text"], textarea {
+      width: 90%;
+      max-width: 400px;
+      padding: 15px;
+      margin: 10px 0;
       border: none;
-      width: 300px;
-      font-size: 1em;
+      border-radius: 10px;
     }
 
     button[type="submit"] {
-      margin-top: 20px;
-      padding: 15px 30px;
-      background-color: gold;
-      color: #001f3f;
+      background-color: yellow;
+      color: black;
+      padding: 15px 40px;
+      font-size: 1.2em;
       border: none;
       border-radius: 30px;
       cursor: pointer;
-      font-size: 1.2em;
+      margin-top: 20px;
     }
 
-    button[type="submit"]:hover {
-      background-color: #ffd700;
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.8em;
+      color: gray;
     }
   </style>
 </head>
@@ -134,34 +147,41 @@
 <header>
   <h1>Elite Physique Blueprint</h1>
   <p>I help busy guys get into shape with minimal effort</p>
+  <a href="#form" class="button">Get Started</a>
 </header>
 
-<section class="how-it-works">
+<section>
   <h2>HOW IT WORKS</h2>
-  <div class="bubbles">
+  <div class="how-it-works">
     <div class="bubble">
+      <h3>Step 1</h3>
       <p>Fill out the information below and a Google Form will be emailed to you shortly.</p>
-      <a href="#form-section" class="get-started-btn">Get Started</a>
+      <a href="#form" class="button">Get Started</a>
     </div>
     <div class="bubble">
-      <p>Fill out the Google Form with your fitness goals and lifestyle details so I can create a Blueprint custom to YOU.</p>
+      <h3>Step 2</h3>
+      <p>Fill out the Google Form with your fitness goals and some small lifestyle details so I can create a Blueprint custom to YOU.</p>
     </div>
     <div class="bubble">
-      <p>If you love your free Blueprint, stay in touch and we can set up full-time 1-on-1 coaching tailored just for you!</p>
+      <h3>Step 3</h3>
+      <p>If you like your free Blueprint, stay in contact with me and we can set up full-time 1-on-1 coaching!</p>
     </div>
   </div>
 </section>
 
-<section class="form-section" id="form-section">
-  <h2>Ready to Transform?</h2>
-  <p>Submit your information to get started!</p>
+<section id="form">
+  <h2>Apply for Your Free Blueprint</h2>
   <form action="https://formspree.io/f/xqaqajbp" method="POST">
     <input type="text" name="name" placeholder="Your Name" required><br>
-    <input type="text" name="goal" placeholder="Your #1 Fitness Goal" required><br>
     <input type="email" name="email" placeholder="Your Email" required><br>
+    <input type="text" name="goal" placeholder="Your #1 Fitness Goal" required><br>
     <button type="submit">Submit</button>
   </form>
 </section>
+
+<footer>
+  &copy; 2025 Elite Physique Blueprint. All rights reserved.
+</footer>
 
 </body>
 </html>
