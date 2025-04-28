@@ -2,131 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Elite Physique Blueprint</title>
   <style>
-    /* Global styling */
     body {
-      background-color: #1E3A5F;  /* Dark blue background */
-      color: white;
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a0a23; /* Dark Blue Background */
+      color: white;
     }
 
     header {
+      background-image: url('https://i.imgur.com/YOUR_IMAGE_ID.jpg'); /* Replace with your direct image URL */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed; /* This makes the background stay locked! */
+      height: 100vh; /* Full height of screen */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 50px;
     }
 
-    header img {
-      width: 100%;
-      height: auto;
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
     }
 
-    h1 {
-      font-size: 36px;
-      margin-top: 20px;
-    }
-
-    p {
-      font-size: 20px;
+    header p {
+      font-size: 1.5rem;
       margin-top: 10px;
     }
 
-    /* Form styling */
-    section {
-      padding: 40px;
+    .content {
+      padding: 50px 20px;
+      max-width: 800px;
+      margin: auto;
       text-align: center;
-      background-color: #2D4A6E;  /* Slightly lighter dark blue */
-      margin-top: 20px;
     }
 
     form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      margin-top: 30px;
     }
 
-    input[type="text"], input[type="email"] {
-      width: 80%;
-      padding: 12px;
+    input, textarea {
+      width: 100%;
+      padding: 10px;
       margin: 10px 0;
+      border-radius: 8px;
       border: none;
-      border-radius: 5px;
-      font-size: 16px;
     }
 
-    input[type="submit"] {
-      width: 80%;
-      padding: 15px;
-      background-color: yellow;  /* Yellow submit button */
-      border: none;
-      border-radius: 25px;  /* Oval shape */
-      font-size: 18px;
-      font-weight: bold;
+    button {
+      background-color: yellow;
       color: black;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
       cursor: pointer;
+      transition: background-color 0.3s;
     }
 
-    input[type="submit"]:hover {
-      background-color: #f4c542;  /* Slightly darker yellow on hover */
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #1E3A5F;  /* Matching footer color */
-    }
-
-    footer p {
-      font-size: 16px;
+    button:hover {
+      background-color: gold;
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Header Section -->
   <header>
-    <img src="https://i.imgur.com/6t5UcqM.png" alt="Elite Physique Blueprint Header">
-<style>
-  header img {
-    width: 65%; 
-    height: 35%;
-  }
-</style>
     <h1>Elite Physique Blueprint</h1>
-    <p>I help busy guys get into shape with minimal effort</p>
-  </header>
-
-  <!-- Form Section -->
-  <section>
-    <h2>Sign Up for Your Free Blueprint</h2>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <!-- Name Field -->
-      <label for="name">Your Name:</label>
-      <input type="text" name="name" id="name" required>
-
-      <!-- Fitness Goal Field -->
-      <label for="goal">Your #1 Fitness Goal:</label>
-      <input type="text" name="goal" id="goal" required>
-
-      <!-- Email Field -->
-      <label for="email">Your Email:</label>
-      <input type="email" name="email" id="email" required>
-
-      <!-- Submit Button -->
-      <input type="submit" value="Submit">
-
-      <!-- Hidden redirect after form submission -->
-      <input type="hidden" name="_next" value="https://your-site-name.netlify.app/thankyou.html">
-    </form>
-  </section>
-
-  <!-- Footer Section -->
-  <footer>
-    <p>&copy; 2025 Elite Physique Blueprint. All rights reserved.</p>
-  </footer>
-
-</body>
-</html>
+    <p>I help busy guys get
