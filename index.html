@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Elite Physique Blueprint</title>
   <style>
+    html {
+      scroll-behavior: smooth; /* Smooth scroll effect */
+    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -13,12 +16,12 @@
     }
 
     header {
-      background-image: url('https://i.imgur.com/YOUR_IMAGE_ID.jpg'); /* Replace with your direct image URL */
+      background-image: url('https://i.imgur.com/6t5UcqM.png'); /* Update this to your image */
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
-      background-attachment: fixed; /* This makes the background stay locked! */
-      height: 100vh; /* Full height of screen */
+      background-attachment: fixed; /* Stays locked */
+      height: 100vh; /* Full screen height */
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -60,7 +63,7 @@
       color: black;
       padding: 15px 30px;
       border: none;
-      border-radius: 25px;
+      border-radius: 25px; /* Oval Bubble Shape */
       font-size: 1rem;
       cursor: pointer;
       transition: background-color 0.3s;
@@ -69,6 +72,7 @@
     button:hover {
       background-color: gold;
     }
+
   </style>
 </head>
 
@@ -76,4 +80,21 @@
 
   <header>
     <h1>Elite Physique Blueprint</h1>
-    <p>I help busy guys get
+    <p>I help busy guys get into shape with minimal effort</p>
+    <a href="#form-section" style="margin-top: 30px;">
+      <button>Get Started</button>
+    </a>
+  </header>
+
+  <div class="content" id="form-section">
+    <h2>Ready to transform?</h2>
+    <form action="https://formspree.io/f/xqaqajbp" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="text" name="goal" placeholder="Your #1 Fitness Goal" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <button type="submit">Submit</button> <!-- Changed to 'Submit' instead of 'Get Your Free Blueprint' -->
+    </form>
+  </div>
+
+</body>
+</html>
