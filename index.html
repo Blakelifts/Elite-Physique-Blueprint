@@ -11,6 +11,9 @@
       background-color: #0A1A2F;
       color: #FFFFFF;
       scroll-behavior: smooth;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
@@ -55,12 +58,13 @@
       max-width: 300px;
       flex: 1;
       min-width: 250px;
-      transition: background-color 0.3s ease-in-out;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.4); /* White back-glow */
+      transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
     }
 
     .bubble:hover {
-      background-color: #FFD700;
-      color: black;
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.7); /* Larger white back-glow */
     }
 
     .bubble button {
@@ -76,10 +80,14 @@
 
     form {
       max-width: 500px;
-      margin: 0 auto 60px auto;
+      margin: 0 auto;
       background: #13294B;
       padding: 40px;
       border-radius: 10px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      left: 0;
     }
 
     label {
@@ -146,7 +154,7 @@
     .third-image {
       display: block;
       margin: 40px auto;
-      width: 60%;
+      width: 65%;
       border-radius: 10px;
     }
 
