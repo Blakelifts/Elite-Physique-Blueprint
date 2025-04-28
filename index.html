@@ -100,6 +100,50 @@
       font-size: 18px;
       cursor: pointer;
     }
+
+    .divider {
+      margin: 50px 0;
+      border-top: 2px solid #FFD700;
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .trust-section {
+      padding: 60px 20px;
+      background-color: #13294B;
+    }
+
+    .images-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    .images-container img {
+      width: 250px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .trust-text {
+      margin: 20px 0;
+      font-size: 18px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #FFF;
+    }
+
+    .third-image {
+      display: block;
+      margin: 40px auto;
+      width: 80%;
+      border-radius: 10px;
+    }
+
   </style>
 </head>
 <body>
@@ -142,6 +186,26 @@
     </label>
     <button type="submit">Submit</button>
   </form>
+</section>
+
+<section class="trust-section">
+  <h2>CAN YOU TRUST ME?</h2>
+  <div class="images-container">
+    <div>
+      <img src="https://i.imgur.com/ECke9Dx.png" alt="Before The Blueprint">
+      <p>Before The Blueprint</p>
+    </div>
+    <div>
+      <img src="https://i.imgur.com/vChDtGl.png" alt="After The Blueprint">
+      <p>After The Blueprint</p>
+    </div>
+  </div>
+  
+  <div class="trust-text">
+    <p>With my combined NASM Personal Trainer Certification and over 5 years of bodybuilding experience, I guarantee that I can help you achieve results like mine. You just have to commit and put in the effort — together, we'll make it happen!</p>
+  </div>
+  
+  <img class="third-image" src="https://i.imgur.com/mcll4nq.jpeg" alt="Trust Image">
 </section>
 
 </body>
